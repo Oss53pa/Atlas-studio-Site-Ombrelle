@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sable font-body font-light text-encre antialiased;
+  }
+
+  /* Les liens portent leur couleur au cas par cas ; par défaut ils suivent l'encre. */
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  ::selection {
+    @apply bg-encre text-sable;
+  }
+
+  /* Anneau de focus visible sur fond sable comme sur fond sombre. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-sauge ring-offset-2 ring-offset-sable;
+  }
+
+  /* Les ancres de section ne passent pas sous l'en-tête collant. */
+  [id] {
+    scroll-margin-top: 96px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Largeur de contenu commune : 1320px, gouttière fluide. */
+  .shell {
+    @apply mx-auto box-border w-full max-w-site px-gutter;
+  }
+
+  /* Intitulé de section : « 01. Les deux départements ». */
+  .section-label {
+    @apply text-[13px] font-normal uppercase tracking-[0.2em] text-texte-doux;
+  }
+
+  /* Petite capitale d'étiquette, au-dessus des blocs. */
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.24em] text-texte-doux;
+  }
+}
