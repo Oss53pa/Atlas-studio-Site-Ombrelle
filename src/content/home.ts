@@ -118,6 +118,8 @@ export const FOOTER_COLUMNS = [
       { label: 'Le département', href: DEPARTMENTS.saas.url },
       { label: 'Les applications', href: `${DEPARTMENTS.saas.url}/applications` },
       { label: 'Tarifs', href: `${DEPARTMENTS.saas.url}/tarifs` },
+      { label: 'À propos', href: `${DEPARTMENTS.saas.url}/a-propos` },
+      { label: 'Blog', href: `${DEPARTMENTS.saas.url}/blog` },
       { label: 'Questions fréquentes', href: `${DEPARTMENTS.saas.url}/faq` },
       { label: 'Contact', href: `${DEPARTMENTS.saas.url}/contact` },
     ],
