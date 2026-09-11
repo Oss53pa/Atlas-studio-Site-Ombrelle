@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://atlas-studio.org/sitemap.xml
+Sitemap: https://www.atlas-studio.org/sitemap.xml

@@ -33,7 +33,11 @@ export default function RouteMeta() {
     setMeta('name', 'description', meta.description);
     setMeta('property', 'og:title', meta.title);
     setMeta('property', 'og:description', meta.description);
-    setCanonical(`${SITE.url}${pathname}`);
+    // og:url suit la page courante, comme la canonique : sans cela un partage
+    // des mentions légales serait attribué à l'accueil.
+    const canonical = `${SITE.url}${pathname}`;
+    setMeta('property', 'og:url', canonical);
+    setCanonical(canonical);
   }, [pathname]);
 
   useEffect(() => {
