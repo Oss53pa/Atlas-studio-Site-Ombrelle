@@ -7,9 +7,8 @@
 
 export const SITE = {
   name: 'Atlas Studio',
-  // Domaine affiché en toutes lettres (pied de page, mentions légales) : sans
-  // « www », qui n'apporte rien à la lecture.
-  domain: 'atlas-studio.org',
+  // Domaine affiché en toutes lettres (pied de page, mentions légales).
+  domain: 'www.atlas-studio.org',
   // URL canonique. Vercel sert le site depuis www et y redirige l'apex : cette
   // valeur doit désigner l'hôte qui répond réellement, sinon les balises
   // canoniques et le sitemap déclarent une adresse autre que celle servie.
