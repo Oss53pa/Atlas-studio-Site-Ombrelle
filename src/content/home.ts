@@ -104,13 +104,22 @@ export const CONTACT = {
     'Écrivez-nous une fois : nous orientons votre demande vers le département concerné, édition ou conseil.',
 } as const;
 
+/**
+ * Colonnes du pied de page.
+ *
+ * Les liens Atlas SaaS pointent vers les routes réelles de son site ; celles-ci
+ * sont définies dans le routeur du dépôt du département. Atlas Consulting reste
+ * sur sa racine tant que son site n'expose pas de sous-pages stables.
+ */
 export const FOOTER_COLUMNS = [
   {
     title: DEPARTMENTS.saas.name,
     links: [
       { label: 'Le département', href: DEPARTMENTS.saas.url },
-      { label: 'Les applications', href: DEPARTMENTS.saas.url },
-      { label: 'Déploiement & support', href: DEPARTMENTS.saas.url },
+      { label: 'Les applications', href: `${DEPARTMENTS.saas.url}/applications` },
+      { label: 'Tarifs', href: `${DEPARTMENTS.saas.url}/tarifs` },
+      { label: 'Questions fréquentes', href: `${DEPARTMENTS.saas.url}/faq` },
+      { label: 'Contact', href: `${DEPARTMENTS.saas.url}/contact` },
     ],
   },
   {
