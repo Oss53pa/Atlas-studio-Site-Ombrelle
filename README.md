@@ -67,3 +67,48 @@ Dosis identifie Atlas SaaS, Prata identifie Atlas Consulting.
 La photo de la section « méthode » est servie en WebP avec un repli JPEG
 (`public/images/`). Toute nouvelle image doit être redimensionnée à 2400 px de large
 au maximum avant d'être versionnée.
+
+## Déploiement (Vercel)
+
+Le dépôt est prêt à être importé tel quel : `vercel.json` est versionné et Vercel
+détecte Vite tout seul. Aucune variable d'environnement n'est nécessaire — le site
+est statique et n'appelle aucun backend.
+
+### Import initial
+
+1. Vercel → **Add New… → Project** → importer `Oss53pa/Atlas-studio-Site-Ombrelle`
+2. Vérifier les réglages détectés (ils devraient déjà être corrects) :
+
+   | Réglage             | Valeur          |
+   | ------------------- | --------------- |
+   | Framework Preset    | Vite            |
+   | Build Command       | `npm run build` |
+   | Output Directory    | `dist`          |
+   | Install Command     | `npm ci`        |
+   | Node.js Version     | 20.x            |
+
+3. **Deploy**
+
+Une fois le projet lié, chaque `push` sur `main` déclenche un déploiement de
+production ; les autres branches produisent des previews.
+
+### Domaine
+
+Vercel → Project → Settings → Domains → ajouter `atlas-studio.org` et
+`www.atlas-studio.org`, puis chez le registrar :
+
+| Type  | Host | Valeur                 | TTL  |
+| ----- | ---- | ---------------------- | ---- |
+| A     | @    | `76.76.21.21`          | Auto |
+| CNAME | www  | `cname.vercel-dns.com` | Auto |
+
+Les deux départements gardent leurs propres projets Vercel sur
+`saas-branch.atlas-studio.org` et `consulting-branch.atlas-studio.org` : ce site ne
+touche pas à leurs enregistrements DNS.
+
+### Ce que fait `vercel.json`
+
+- **Rewrites** — toutes les routes sont réécrites vers `index.html`, sans quoi un
+  accès direct à `/mentions-legales` renverrait un 404 (le routage est côté client).
+- **Cache** — `index.html` n'est jamais mis en cache, les fichiers de `assets/` et
+  `images/` le sont un an (leurs noms portent une empreinte, ou ne changent pas).
