@@ -46,8 +46,8 @@ export default {
       fontFamily: {
         // Jost porte le corps de texte, en graisse 300.
         body: ["'Jost'", 'Helvetica', 'sans-serif'],
-        // Grand Hotel signe le nom Atlas Studio et les titres de section.
-        logo: ["'Grand Hotel'", 'cursive'],
+        // Jost en graisse 600, celle du logo, signe le nom Atlas Studio et les titres de section.
+        logo: ["'Jost'", 'Helvetica', 'sans-serif'],
         // Dosis identifie Atlas SaaS, Prata identifie Atlas Consulting.
         dosis: ["'Dosis'", "'Jost'", 'sans-serif'],
         prata: ["'Prata'", 'Georgia', 'serif'],
@@ -55,7 +55,7 @@ export default {
       fontSize: {
         // Échelle fluide : la typographie suit la largeur de la fenêtre.
         wordmark: ['clamp(66px,13.5vw,196px)', { lineHeight: '0.86', letterSpacing: '-0.015em' }],
-        departement: ['clamp(44px,5vw,68px)', { lineHeight: '1' }],
+        departement: ['clamp(30px,4vw,54px)', { lineHeight: '1', letterSpacing: '-0.01em' }],
         invitation: ['clamp(38px,5vw,66px)', { lineHeight: '1' }],
         chapeau: ['clamp(22px,2.6vw,34px)', { lineHeight: '1.35' }],
         manifeste: ['clamp(24px,2.8vw,38px)', { lineHeight: '1.3' }],

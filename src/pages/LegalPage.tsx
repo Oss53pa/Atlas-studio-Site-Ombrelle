@@ -11,7 +11,7 @@ export default function LegalPage() {
         <span className="eyebrow">Informations légales</span>
       </div>
 
-      <h1 className="m-0 max-w-[16ch] font-logo text-invitation font-normal">Mentions légales</h1>
+      <h1 className="m-0 max-w-[16ch] font-logo text-invitation font-semibold">Mentions légales</h1>
 
       <p className="mb-0 mt-[clamp(24px,4vh,40px)] max-w-[52ch] text-base leading-[1.8] text-texte [text-wrap:pretty]">
         Ces informations concernent le site ombrelle {SITE.domain}. Les conditions propres aux applications

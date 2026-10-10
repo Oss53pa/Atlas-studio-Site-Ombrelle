@@ -5,7 +5,7 @@ export default function NotFoundPage() {
   return (
     <main className="shell flex min-h-[60vh] flex-col justify-center gap-6 py-[clamp(48px,9vh,104px)]">
       <span className="eyebrow">Erreur 404</span>
-      <h1 className="m-0 max-w-[14ch] font-logo text-invitation font-normal">Page introuvable</h1>
+      <h1 className="m-0 max-w-[14ch] font-logo text-invitation font-semibold">Page introuvable</h1>
       <p className="m-0 max-w-[44ch] text-base leading-[1.8] text-texte [text-wrap:pretty]">
         Cette adresse ne correspond à aucune page du site. Les deux départements sont présentés sur la page
         d’accueil.

@@ -47,7 +47,7 @@ export default function DepartmentCard({
           </span>
         </div>
 
-        <h3 className="m-0 flex items-center gap-[0.3em] font-logo text-departement font-normal">
+        <h3 className="m-0 flex items-center gap-[0.3em] font-logo text-departement font-semibold">
           <AtlasLogo variant="mark" decorative className="h-[0.72em] w-auto shrink-0" />
           {card.name}
         </h3>
