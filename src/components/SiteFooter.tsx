@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SITE } from '../config/site';
 import { FOOTER_COLUMNS } from '../content/home';
+import AtlasLogo from './AtlasLogo';
 
 const YEAR = new Date().getFullYear();
 
@@ -10,7 +11,7 @@ export default function SiteFooter() {
     <footer className="shell mt-[clamp(56px,9vh,112px)] pb-[clamp(32px,5vh,56px)]">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,190px),1fr))] gap-[clamp(24px,4vw,56px)] border-t border-rule py-[clamp(28px,4vh,44px)]">
         <div className="flex flex-col gap-3">
-          <span className="font-logo text-2xl">{SITE.name}</span>
+          <AtlasLogo className="h-12 w-auto self-start text-encre" />
           <span className="max-w-[26ch] text-sm leading-[1.7] text-texte">
             Édition de logiciels, conseil et formation.
           </span>

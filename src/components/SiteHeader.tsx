@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { NAV_LINKS, SITE } from '../config/site';
+import AtlasLogo from './AtlasLogo';
 
-/** En-tête collant : nom du studio, deux ancres de section, bouton contact. */
+/** En-tête collant : logo du studio, deux ancres de section, bouton contact. */
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-rule bg-sable/[0.86] backdrop-blur-md">
       <div className="shell flex flex-wrap items-center justify-between gap-6 py-4">
-        <Link to="/" className="font-logo text-[25px] leading-none">
-          {SITE.name}
+        <Link to="/" aria-label={`${SITE.name}, accueil`} className="text-encre">
+          <AtlasLogo className="block h-11 w-auto" />
         </Link>
         <nav className="flex items-center gap-[clamp(14px,2.2vw,32px)] text-[13px] uppercase tracking-[0.1em]">
           {NAV_LINKS.map((link) => (
