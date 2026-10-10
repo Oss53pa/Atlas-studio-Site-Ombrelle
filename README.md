@@ -58,9 +58,13 @@ anime le bloc correspondant plus bas. Sur un écran tactile, où il n'y a pas de
 un `IntersectionObserver` prend le relais — le bloc s'anime dès qu'il occupe
 l'essentiel de la fenêtre.
 
-**Les polices** (Jost, Grand Hotel, Dosis, Prata) sont chargées depuis Google Fonts
-dans `index.html`, comme sur les autres sites Atlas Studio. Grand Hotel signe le nom,
-Dosis identifie Atlas SaaS, Prata identifie Atlas Consulting.
+**Les polices** (Jost, Dosis, Prata) sont chargées depuis Google Fonts dans
+`index.html`, comme sur les autres sites Atlas Studio. Jost, celle du logo, porte le
+texte et, en graisse 600, les titres ; Dosis identifie Atlas SaaS, Prata identifie
+Atlas Consulting.
+
+**Le logo** est redessiné en SVG dans `src/components/AtlasLogo.tsx` (pictogramme seul
+ou pictogramme et nom), en `currentColor` ; le favicon reprend le même pictogramme.
 
 ## Images
 
