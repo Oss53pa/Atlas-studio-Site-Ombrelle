@@ -13,17 +13,18 @@ type AtlasLogoProps = {
   /** « lockup » : pictogramme et nom ; « mark » : pictogramme seul. */
   variant?: 'lockup' | 'mark';
   className?: string;
+  /** Logo purement décoratif, à côté d'un nom déjà écrit : masqué aux lecteurs d'écran. */
+  decorative?: boolean;
 };
 
-export default function AtlasLogo({ variant = 'lockup', className }: AtlasLogoProps) {
+export default function AtlasLogo({ variant = 'lockup', className, decorative = false }: AtlasLogoProps) {
   const isLockup = variant === 'lockup';
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox={isLockup ? '0 0 920 331' : '0 0 393 331'}
-      role="img"
-      aria-label="Atlas Studio"
+      {...(decorative ? { 'aria-hidden': true } : { role: 'img', 'aria-label': 'Atlas Studio' })}
       className={className}
       fill="currentColor"
     >
