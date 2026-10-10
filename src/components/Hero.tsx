@@ -29,7 +29,7 @@ export default function Hero({ focus }: { focus: DepartmentFocus }) {
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,460px),1fr))] items-end gap-[clamp(24px,4vw,64px)]">
-          <h1 className="m-0 font-logo text-wordmark font-normal">{HERO.title}</h1>
+          <h1 className="m-0 font-logo text-wordmark font-semibold">{HERO.title}</h1>
 
           <div className="flex flex-col pb-[clamp(6px,1.4vh,18px)]">
             {DEPARTMENT_CARDS.map((card, i) => {

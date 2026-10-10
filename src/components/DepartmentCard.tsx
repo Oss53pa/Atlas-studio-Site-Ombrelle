@@ -1,5 +1,6 @@
 import type { DepartmentCardContent } from '../content/home';
 import type { DepartmentFocus } from '../hooks/useDepartmentFocus';
+import AtlasLogo from './AtlasLogo';
 import { cardStyle, paletteFor } from './departmentPalette';
 
 /**
@@ -46,7 +47,10 @@ export default function DepartmentCard({
           </span>
         </div>
 
-        <h3 className="m-0 font-logo text-departement font-normal">{card.name}</h3>
+        <h3 className="m-0 flex items-center gap-[0.3em] font-logo text-departement font-semibold">
+          <AtlasLogo variant="mark" decorative className="h-[0.72em] w-auto shrink-0" />
+          {card.name}
+        </h3>
 
         <p
           className="m-0 max-w-[42ch] text-base leading-[1.8] transition-colors duration-420 [text-wrap:pretty]"

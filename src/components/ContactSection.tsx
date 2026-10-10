@@ -8,7 +8,7 @@ export default function ContactSection() {
       <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] items-end gap-[clamp(28px,5vw,72px)] rounded-bloc bg-nuit p-[clamp(36px,6vw,88px)] text-sable">
         <div className="flex flex-col gap-5">
           <span className="text-xs uppercase tracking-[0.24em] text-nuit-muted">{CONTACT.label}</span>
-          <p className="m-0 font-logo text-invitation">{CONTACT.title}</p>
+          <p className="m-0 font-logo text-invitation font-semibold">{CONTACT.title}</p>
         </div>
 
         <div className="flex flex-col gap-5">
