@@ -1,26 +1,12 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { SITE } from '../config/site';
-
-const META: Record<string, { title: string; description: string }> = {
-  '/': {
-    title: 'Atlas Studio, édition de logiciels, conseil et formation',
-    description:
-      "Atlas Studio réunit deux départements : Atlas SaaS, édition d'applications métier en SaaS, et Atlas Consulting, conseil et formation.",
-  },
-  '/mentions-legales': {
-    title: `Mentions légales — ${SITE.name}`,
-    description: `Mentions légales et politique de confidentialité du site ${SITE.domain}.`,
-  },
-};
-
-const FALLBACK = {
-  title: `Page introuvable — ${SITE.name}`,
-  description: SITE.tagline,
-};
+import { LOCALES, localeFromPath, OG_LOCALE, pageFromPath, PATHS } from '../i18n/locale';
+import { UI } from '../i18n/ui';
 
 /**
- * Tient à jour le titre, la description et l'URL canonique au fil de la
+ * Tient à jour la langue du document, le titre, la description, l'URL
+ * canonique et les variantes linguistiques (hreflang) au fil de la
  * navigation, et rejoue le défilement vers l'ancre demandée : le routeur ne
  * le fait pas de lui-même sur une navigation côté client.
  */
@@ -28,16 +14,31 @@ export default function RouteMeta() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    const meta = META[pathname] ?? FALLBACK;
+    const locale = localeFromPath(pathname);
+    const page = pageFromPath(pathname);
+    const meta = UI[locale].meta[page ?? 'notFound'];
+
+    document.documentElement.lang = locale;
     document.title = meta.title;
     setMeta('name', 'description', meta.description);
     setMeta('property', 'og:title', meta.title);
     setMeta('property', 'og:description', meta.description);
+    setMeta('property', 'og:locale', OG_LOCALE[locale]);
+    setMeta('property', 'og:locale:alternate', OG_LOCALE[locale === 'fr' ? 'en' : 'fr']);
     // og:url suit la page courante, comme la canonique : sans cela un partage
     // des mentions légales serait attribué à l'accueil.
-    const canonical = `${SITE.url}${pathname}`;
+    const canonical = `${SITE.url}${page ? PATHS[locale][page] : pathname}`;
     setMeta('property', 'og:url', canonical);
     setCanonical(canonical);
+    // Une page 404 n'a pas de variante : aucune balise hreflang.
+    setAlternates(
+      page
+        ? [
+            ...LOCALES.map((l) => ({ lang: l as string, href: `${SITE.url}${PATHS[l][page]}` })),
+            { lang: 'x-default', href: `${SITE.url}${PATHS.fr[page]}` },
+          ]
+        : [],
+    );
   }, [pathname]);
 
   useEffect(() => {
@@ -71,4 +72,15 @@ function setCanonical(href: string) {
     document.head.appendChild(link);
   }
   link.href = href;
+}
+
+function setAlternates(alternates: { lang: string; href: string }[]) {
+  document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => link.remove());
+  for (const { lang, href } of alternates) {
+    const link = document.createElement('link');
+    link.rel = 'alternate';
+    link.hreflang = lang;
+    link.href = href;
+    document.head.appendChild(link);
+  }
 }

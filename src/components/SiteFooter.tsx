@@ -1,23 +1,31 @@
 import { Link } from 'react-router-dom';
 import { SITE } from '../config/site';
-import { FOOTER_COLUMNS } from '../content/home';
+import { HOME } from '../content/home';
+import { PRIVACY_ANCHOR } from '../config/legal';
+import { PATHS } from '../i18n/locale';
+import { useLocale } from '../i18n/useLocale';
+import { UI } from '../i18n/ui';
 import AtlasLogo from './AtlasLogo';
 
 const YEAR = new Date().getFullYear();
 
 /** Pied de page : rappel des deux départements et liens de l'entreprise. */
 export default function SiteFooter() {
+  const locale = useLocale();
+  const t = UI[locale].footer;
+  const legalPath = PATHS[locale].legal;
+
   return (
     <footer className="shell mt-[clamp(56px,9vh,112px)] pb-[clamp(32px,5vh,56px)]">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,190px),1fr))] gap-[clamp(24px,4vw,56px)] border-t border-rule py-[clamp(28px,4vh,44px)]">
         <div className="flex flex-col gap-3">
           <AtlasLogo className="h-12 w-auto self-start text-encre" />
           <span className="max-w-[26ch] text-sm leading-[1.7] text-texte">
-            Édition de logiciels, conseil et formation.
+            {t.tagline}
           </span>
         </div>
 
-        {FOOTER_COLUMNS.map((column) => (
+        {HOME[locale].footerColumns.map((column) => (
           <div key={column.title} className="flex flex-col gap-2.5">
             <span className="mb-1 text-xs uppercase tracking-[0.2em] text-texte-label">{column.title}</span>
             {column.links.map((link) => (
@@ -33,18 +41,18 @@ export default function SiteFooter() {
         ))}
 
         <div className="flex flex-col gap-2.5">
-          <span className="mb-1 text-xs uppercase tracking-[0.2em] text-texte-label">Entreprise</span>
+          <span className="mb-1 text-xs uppercase tracking-[0.2em] text-texte-label">{t.company}</span>
           <a href={`mailto:${SITE.email}`} className="text-sm text-texte transition-colors hover:text-sauge">
-            Contact
+            {t.contact}
           </a>
-          <Link to="/mentions-legales" className="text-sm text-texte transition-colors hover:text-sauge">
-            Mentions légales
+          <Link to={legalPath} className="text-sm text-texte transition-colors hover:text-sauge">
+            {t.legal}
           </Link>
           <Link
-            to="/mentions-legales#confidentialite"
+            to={`${legalPath}#${PRIVACY_ANCHOR[locale]}`}
             className="text-sm text-texte transition-colors hover:text-sauge"
           >
-            Confidentialité
+            {t.privacy}
           </Link>
         </div>
       </div>

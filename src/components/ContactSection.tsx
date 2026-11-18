@@ -1,8 +1,10 @@
-import { CONTACT } from '../content/home';
+import { HOME } from '../content/home';
+import { useLocale } from '../i18n/useLocale';
 import { SITE } from '../config/site';
 
 /** Bandeau sombre de fin de page : une seule adresse, pour les deux départements. */
 export default function ContactSection() {
+  const CONTACT = HOME[useLocale()].contact;
   return (
     <section id="contact" className="shell mt-[clamp(72px,12vh,144px)]">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] items-end gap-[clamp(28px,5vw,72px)] rounded-bloc bg-nuit p-[clamp(36px,6vw,88px)] text-sable">

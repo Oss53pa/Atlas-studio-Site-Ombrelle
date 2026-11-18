@@ -13,7 +13,6 @@ export const SITE = {
   // valeur doit désigner l'hôte qui répond réellement, sinon les balises
   // canoniques et le sitemap déclarent une adresse autre que celle servie.
   url: 'https://www.atlas-studio.org',
-  tagline: 'Éditeur de logiciels métier, cabinet de conseil et de formation.',
   email: 'contact@atlas-studio.org',
 } as const;
 
@@ -33,9 +32,3 @@ export const DEPARTMENTS = {
 } as const;
 
 export type DepartmentKey = keyof typeof DEPARTMENTS;
-
-/** Ancres de l'en-tête, consommées par <Link> : d'où le champ `to`. */
-export const NAV_LINKS = [
-  { label: 'Départements', to: '/#departements' },
-  { label: 'Méthode', to: '/#methode' },
-] as const;

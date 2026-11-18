@@ -4,7 +4,12 @@
  * Ce site est une vitrine : il n'ouvre pas de compte, ne traite pas de
  * paiement et ne dépose aucun cookie. Les conditions d'utilisation des
  * applications sont publiées sur le site du département Atlas SaaS.
+ *
+ * La version anglaise est une traduction de courtoisie : la page anglaise
+ * précise que la version française prévaut.
  */
+
+import type { Locale } from '../i18n/locale';
 
 export type LegalSection = {
   heading: string;
@@ -13,14 +18,17 @@ export type LegalSection = {
 };
 
 export type LegalBlock = {
-  /** Ancre utilisée dans l'URL (#confidentialite). */
+  /** Ancre utilisée dans l'URL (#confidentialite, #privacy). */
   id: string;
   index: string;
   title: string;
   sections: LegalSection[];
 };
 
-export const LEGAL_BLOCKS: LegalBlock[] = [
+/** Ancre de la partie confidentialité, visée par le pied de page. */
+export const PRIVACY_ANCHOR: Record<Locale, string> = { fr: 'confidentialite', en: 'privacy' };
+
+const FR: LegalBlock[] = [
   {
     id: 'mentions-legales',
     index: '01',
@@ -65,7 +73,7 @@ export const LEGAL_BLOCKS: LegalBlock[] = [
     ],
   },
   {
-    id: 'confidentialite',
+    id: PRIVACY_ANCHOR.fr,
     index: '02',
     title: 'Confidentialité',
     sections: [
@@ -102,3 +110,88 @@ export const LEGAL_BLOCKS: LegalBlock[] = [
     ],
   },
 ];
+
+const EN: LegalBlock[] = [
+  {
+    id: 'legal-notice',
+    index: '01',
+    title: 'Legal notice',
+    sections: [
+      {
+        heading: 'Website publisher',
+        body: [
+          'Atlas Studio',
+          "Registered office: Abidjan, Côte d'Ivoire",
+          'Email: contact@atlas-studio.org',
+          'Publication director: Pamela Atokouna',
+        ],
+      },
+      {
+        heading: 'Hosting',
+        body: [
+          'Vercel Inc.',
+          '340 S Lemon Ave #4133, Walnut, CA 91789, USA',
+          'Website: vercel.com',
+        ],
+      },
+      {
+        heading: 'Departments',
+        body: [
+          'Atlas Studio brings together two departments: Atlas SaaS, which publishes the business applications of the Atlas range, and Atlas Consulting, which carries out consulting and training assignments.',
+          'Each department publishes its own terms on its website: saas-branch.atlas-studio.org and consulting-branch.atlas-studio.org.',
+        ],
+      },
+      {
+        heading: 'Intellectual property',
+        body: [
+          "All content on this website (text, images, logos, icons, software) is protected by intellectual property law. Any reproduction, even partial, is prohibited without Atlas Studio's prior written consent.",
+        ],
+      },
+      {
+        heading: 'Liability',
+        body: [
+          'Atlas Studio strives to ensure that the information published on this website is accurate. However, Atlas Studio cannot guarantee that the information is accurate, complete or up to date, and reserves the right to change its content at any time without notice.',
+        ],
+      },
+    ],
+  },
+  {
+    id: PRIVACY_ANCHOR.en,
+    index: '02',
+    title: 'Privacy',
+    sections: [
+      {
+        heading: 'Data collected',
+        body: [
+          'This website has no user accounts, no forms and no audience measurement. Atlas Studio collects no personal data through it.',
+        ],
+      },
+      {
+        heading: 'Cookies',
+        body: [
+          'No cookies are placed on your browser: no tracking, advertising or analytics cookies.',
+        ],
+      },
+      {
+        heading: 'Writing to Atlas Studio',
+        body: [
+          'When you write to us at contact@atlas-studio.org, your message and email address are used to reply to you and to route your request to the relevant department. They are never sold or passed on to third parties for commercial purposes.',
+        ],
+      },
+      {
+        heading: 'Your rights',
+        body: [
+          'You have the right to access, rectify, erase and port your data. To exercise these rights, write to contact@atlas-studio.org.',
+        ],
+      },
+      {
+        heading: 'Application data',
+        body: [
+          'Data processed in the applications of the Atlas range is governed by the privacy policy of the Atlas SaaS department, published on saas-branch.atlas-studio.org.',
+        ],
+      },
+    ],
+  },
+];
+
+export const LEGAL_BLOCKS: Record<Locale, LegalBlock[]> = { fr: FR, en: EN };

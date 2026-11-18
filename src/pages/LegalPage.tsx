@@ -1,24 +1,28 @@
 import { Link } from 'react-router-dom';
 import { LEGAL_BLOCKS } from '../config/legal';
-import { SITE } from '../config/site';
+import { PATHS } from '../i18n/locale';
+import { useLocale } from '../i18n/useLocale';
+import { UI } from '../i18n/ui';
 
 /** Mentions légales et confidentialité, sur une seule page à deux ancres. */
 export default function LegalPage() {
+  const locale = useLocale();
+  const t = UI[locale].legal;
+
   return (
     <main className="shell pb-[clamp(40px,7vh,80px)] pt-[clamp(48px,9vh,104px)]">
       <div className="mb-[clamp(24px,4vh,44px)] flex items-center gap-[14px]">
         <span className="block h-px w-[34px] bg-encre" />
-        <span className="eyebrow">Informations légales</span>
+        <span className="eyebrow">{t.eyebrow}</span>
       </div>
 
-      <h1 className="m-0 max-w-[16ch] font-logo text-invitation font-semibold">Mentions légales</h1>
+      <h1 className="m-0 max-w-[16ch] font-logo text-invitation font-semibold">{t.title}</h1>
 
       <p className="mb-0 mt-[clamp(24px,4vh,40px)] max-w-[52ch] text-base leading-[1.8] text-texte [text-wrap:pretty]">
-        Ces informations concernent le site ombrelle {SITE.domain}. Les conditions propres aux applications
-        et aux missions sont publiées sur les sites des départements.
+        {t.intro}
       </p>
 
-      {LEGAL_BLOCKS.map((block) => (
+      {LEGAL_BLOCKS[locale].map((block) => (
         <section key={block.id} id={block.id} className="mt-[clamp(48px,8vh,96px)]">
           <h2 className="section-label m-0">
             {block.index}. {block.title}
@@ -48,8 +52,8 @@ export default function LegalPage() {
       ))}
 
       <p className="mt-[clamp(40px,7vh,80px)] text-[15px]">
-        <Link to="/" className="text-sauge transition-colors hover:text-encre">
-          ← Retour à l’accueil
+        <Link to={PATHS[locale].home} className="text-sauge transition-colors hover:text-encre">
+          {t.back}
         </Link>
       </p>
     </main>
