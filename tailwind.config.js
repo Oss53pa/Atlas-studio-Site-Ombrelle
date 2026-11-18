@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Fond sable et encre — base du site ombrelle.
+        // Fond sable et encre, base du site ombrelle.
         sable: '#FAF8F3',
         encre: '#16171A',
         rule: '#E8E3D9',
@@ -21,7 +21,7 @@ export default {
           faible: '#6B6C6F',
           label: '#6B675F',
         },
-        // Département Atlas SaaS — volt.
+        // Département Atlas SaaS : volt.
         saas: {
           DEFAULT: '#CBE45F',
           encre: '#14150F',
@@ -29,7 +29,7 @@ export default {
           bord: '#A8C22F',
           lien: '#5A6B12',
         },
-        // Département Atlas Consulting — indigo.
+        // Département Atlas Consulting : indigo.
         consulting: {
           DEFAULT: '#1C2058',
           creme: '#F0E7D8',

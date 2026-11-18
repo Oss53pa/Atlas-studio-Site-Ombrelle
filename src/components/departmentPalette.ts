@@ -4,7 +4,7 @@ import type { DepartmentKey } from '../config/site';
 /**
  * Palettes des blocs de département.
  *
- * Au repos les deux blocs sont identiques — deux cadres sur le fond sable.
+ * Au repos les deux blocs sont identiques : deux cadres sur le fond sable.
  * Mis en avant, chacun prend ses couleurs : volt pour l'édition, indigo pour
  * le conseil. Les valeurs sont appliquées en style inline parce qu'elles
  * changent au survol et qu'elles sont animées par une transition.

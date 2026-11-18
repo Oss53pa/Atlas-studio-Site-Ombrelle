@@ -1,10 +1,10 @@
-# Atlas Studio — site ombrelle
+# Atlas Studio, site ombrelle
 
 Site vitrine d'`atlas-studio.org`. Il présente l'entreprise et ses deux départements,
 puis renvoie vers leurs sites respectifs :
 
-- **Atlas SaaS** — édition d'applications métier → `saas-branch.atlas-studio.org`
-- **Atlas Consulting** — conseil et formation → `consulting-branch.atlas-studio.org`
+- **Atlas SaaS** : édition d'applications métier → `saas-branch.atlas-studio.org`
+- **Atlas Consulting** : conseil et formation → `consulting-branch.atlas-studio.org`
 
 Le site est entièrement statique : ni compte, ni formulaire, ni backend. Le seul
 point de contact est l'adresse `contact@atlas-studio.org`.
@@ -28,7 +28,7 @@ npm run dev        # serveur de développement sur http://localhost:5173
 
 ## Stack
 
-Vite · React 18 · TypeScript · Tailwind CSS 3 · React Router — même socle que les
+Vite · React 18 · TypeScript · Tailwind CSS 3 · React Router. Même socle que les
 autres dépôts Atlas Studio. Déploiement sur Vercel (`vercel.json` réécrit toutes
 les routes vers `index.html` pour le routage côté client).
 
@@ -55,7 +55,7 @@ correction éditoriale ne touche pas à la mise en page.
 **La mise en avant d'un département** est portée par `useDepartmentFocus`, partagée
 entre le hero et la section « départements » : survoler un raccourci en haut de page
 anime le bloc correspondant plus bas. Sur un écran tactile, où il n'y a pas de survol,
-un `IntersectionObserver` prend le relais — le bloc s'anime dès qu'il occupe
+un `IntersectionObserver` prend le relais : le bloc s'anime dès qu'il occupe
 l'essentiel de la fenêtre.
 
 **Les polices** (Jost, Dosis, Prata) sont chargées depuis Google Fonts dans
@@ -75,7 +75,7 @@ au maximum avant d'être versionnée.
 ## Déploiement (Vercel)
 
 Le dépôt est prêt à être importé tel quel : `vercel.json` est versionné et Vercel
-détecte Vite tout seul. Aucune variable d'environnement n'est nécessaire — le site
+détecte Vite tout seul. Aucune variable d'environnement n'est nécessaire, le site
 est statique et n'appelle aucun backend.
 
 ### Import initial
@@ -112,7 +112,7 @@ touche pas à leurs enregistrements DNS.
 
 ### Ce que fait `vercel.json`
 
-- **Rewrites** — toutes les routes sont réécrites vers `index.html`, sans quoi un
+- **Rewrites** : toutes les routes sont réécrites vers `index.html`, sans quoi un
   accès direct à `/mentions-legales` renverrait un 404 (le routage est côté client).
-- **Cache** — `index.html` n'est jamais mis en cache, les fichiers de `assets/` et
+- **Cache** : `index.html` n'est jamais mis en cache, les fichiers de `assets/` et
   `images/` le sont un an (leurs noms portent une empreinte, ou ne changent pas).

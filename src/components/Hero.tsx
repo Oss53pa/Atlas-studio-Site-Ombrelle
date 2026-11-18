@@ -1,4 +1,5 @@
-import { DEPARTMENT_CARDS, HERO } from '../content/home';
+import { HOME } from '../content/home';
+import { useLocale } from '../i18n/useLocale';
 import { paletteFor } from './departmentPalette';
 import type { DepartmentFocus } from '../hooks/useDepartmentFocus';
 
@@ -8,6 +9,7 @@ import type { DepartmentFocus } from '../hooks/useDepartmentFocus';
  * plus bas dans la page.
  */
 export default function Hero({ focus }: { focus: DepartmentFocus }) {
+  const { hero: HERO, departmentCards: DEPARTMENT_CARDS } = HOME[useLocale()];
   return (
     <section className="relative overflow-hidden">
       {/* Ondes concentriques du fond, estompées vers le bas. */}

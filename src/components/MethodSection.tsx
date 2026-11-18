@@ -1,7 +1,9 @@
-import { METHOD } from '../content/home';
+import { HOME } from '../content/home';
+import { useLocale } from '../i18n/useLocale';
 
 /** Ce qui relie les deux départements : la mission nourrit l'édition. */
 export default function MethodSection() {
+  const METHOD = HOME[useLocale()].method;
   return (
     <section id="methode" className="shell pt-[clamp(72px,12vh,144px)]">
       <h2 className="section-label mb-[clamp(28px,5vh,52px)] mt-0">{METHOD.label}</h2>

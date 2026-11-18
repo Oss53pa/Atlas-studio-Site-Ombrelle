@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom';
+import { PATHS } from '../i18n/locale';
+import { useLocale } from '../i18n/useLocale';
+import { UI } from '../i18n/ui';
 
-/** Page 404 — le site ne compte que deux pages, on renvoie vite à l'accueil. */
+/** Page 404 : le site ne compte que deux pages, on renvoie vite à l'accueil. */
 export default function NotFoundPage() {
+  const locale = useLocale();
+  const t = UI[locale].notFound;
+
   return (
     <main className="shell flex min-h-[60vh] flex-col justify-center gap-6 py-[clamp(48px,9vh,104px)]">
-      <span className="eyebrow">Erreur 404</span>
-      <h1 className="m-0 max-w-[14ch] font-logo text-invitation font-semibold">Page introuvable</h1>
-      <p className="m-0 max-w-[44ch] text-base leading-[1.8] text-texte [text-wrap:pretty]">
-        Cette adresse ne correspond à aucune page du site. Les deux départements sont présentés sur la page
-        d’accueil.
-      </p>
+      <span className="eyebrow">{t.eyebrow}</span>
+      <h1 className="m-0 max-w-[14ch] font-logo text-invitation font-semibold">{t.title}</h1>
+      <p className="m-0 max-w-[44ch] text-base leading-[1.8] text-texte [text-wrap:pretty]">{t.body}</p>
       <p className="m-0 text-[15px]">
-        <Link to="/" className="text-sauge transition-colors hover:text-encre">
-          ← Retour à l’accueil
+        <Link to={PATHS[locale].home} className="text-sauge transition-colors hover:text-encre">
+          {t.back}
         </Link>
       </p>
     </main>

@@ -1,6 +1,8 @@
 import type { DepartmentCardContent } from '../content/home';
 import type { DepartmentFocus } from '../hooks/useDepartmentFocus';
 import AtlasLogo from './AtlasLogo';
+import { useLocale } from '../i18n/useLocale';
+import { UI } from '../i18n/ui';
 import { cardStyle, paletteFor } from './departmentPalette';
 
 /**
@@ -16,6 +18,7 @@ export default function DepartmentCard({
   card: DepartmentCardContent;
   focus: DepartmentFocus;
 }) {
+  const t = UI[useLocale()].departments;
   const palette = paletteFor(card.key, focus.active === card.key);
   const muted = { color: palette.muted };
   const rule = { borderColor: palette.rule };
@@ -28,7 +31,7 @@ export default function DepartmentCard({
       onMouseLeave={focus.blur}
       onFocus={() => focus.focus(card.key)}
       onBlur={focus.blur}
-      aria-label={`${card.name} — ouvrir le site du département`}
+      aria-label={t.cardAria(card.name)}
       className="flex min-h-[clamp(420px,58vh,560px)] flex-col justify-between gap-[clamp(40px,7vh,72px)] rounded-bloc border border-rule p-[clamp(28px,3vw,48px)] transition-[background-color,color,border-color,transform] duration-420 ease-out"
       style={cardStyle(palette)}
     >
