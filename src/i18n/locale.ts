@@ -20,7 +20,7 @@ export const PATHS: Record<Locale, Record<PageKey, string>> = {
 };
 
 /** Code Open Graph de chaque langue. */
-export const OG_LOCALE: Record<Locale, string> = { fr: 'fr_FR', en: 'en_US' };
+export const OG_LOCALE: Record<Locale, string> = { fr: 'fr_FR', en: 'en_GB' };
 
 function normalize(pathname: string): string {
   return pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;

@@ -53,8 +53,8 @@ const CONSULTING = DEPARTMENTS.consulting.url;
  * Les liens Atlas SaaS pointent vers les routes réelles de son site ; celles-ci
  * sont définies dans le routeur du dépôt du département. Atlas Consulting reste
  * sur sa racine tant que son site n'expose pas de sous-pages stables. Les sites
- * des départements n'ont qu'une version française : la version anglaise du
- * pied de page y renvoie donc aussi.
+ * Atlas Consulting a une version anglaise sous /en : la version anglaise du
+ * site y renvoie. Atlas SaaS n'a encore qu'une version française.
  */
 
 export const HOME: Record<Locale, HomeContent> = {
@@ -159,7 +159,7 @@ export const HOME: Record<Locale, HomeContent> = {
       title: 'Atlas Studio',
       lead: 'Business software publisher, consulting and training firm.',
       body:
-        'Two departments under one name. We work alongside organizations in the field, ' +
+        'Two departments under one name. We work alongside organisations in the field, ' +
         'and we publish the software they use every day.',
     },
     identity: [
@@ -172,7 +172,7 @@ export const HOME: Record<Locale, HomeContent> = {
         ...department('saas', 'A.'),
         kicker: 'Software publishing',
         description:
-          "Atlas Studio's software publishing department. Business applications built for organizations " +
+          "Atlas Studio's software publishing department. Business applications built for organisations " +
           'that manage assets, teams and contracts, delivered as SaaS, maintained and continuously ' +
           "improved. The full Atlas range is presented on the department's website.",
         rows: [
@@ -183,10 +183,11 @@ export const HOME: Record<Locale, HomeContent> = {
       },
       {
         ...department('consulting', 'B.'),
+        url: `${CONSULTING}/en`,
         kicker: 'Consulting & training',
         description:
           "Atlas Studio's consulting and training department. We work from scoping through to skills " +
-          'transfer, alongside the teams driving change within their organization.',
+          'transfer, alongside the teams driving change within their organisation.',
         rows: [
           { term: 'Assessment', detail: 'Scoping & audit' },
           { term: 'Support', detail: 'Change management' },
@@ -240,10 +241,10 @@ export const HOME: Record<Locale, HomeContent> = {
       {
         title: DEPARTMENTS.consulting.name,
         links: [
-          { label: 'The department', href: CONSULTING },
-          { label: 'Assessment', href: CONSULTING },
-          { label: 'Change support', href: CONSULTING },
-          { label: 'Training', href: CONSULTING },
+          { label: 'The department', href: `${CONSULTING}/en` },
+          { label: 'Method', href: `${CONSULTING}/en/method` },
+          { label: 'Training', href: `${CONSULTING}/en/training` },
+          { label: 'Background', href: `${CONSULTING}/en/background` },
         ],
       },
     ],
