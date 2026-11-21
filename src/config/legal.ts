@@ -54,8 +54,8 @@ const FR: LegalBlock[] = [
       {
         heading: 'Départements',
         body: [
-          "Atlas Studio réunit deux départements : Atlas SaaS, qui édite les applications métier de la gamme Atlas, et Atlas Consulting, qui conduit les missions de conseil et de formation.",
-          "Chaque département publie ses propres conditions sur son site : saas-branch.atlas-studio.org et consulting-branch.atlas-studio.org.",
+          "Atlas Studio réunit deux départements : Atlas Consulting, qui conduit les missions de conseil et de formation, et Atlas SaaS, qui édite les applications métier de la gamme Atlas.",
+          "Chaque département publie ses propres conditions sur son site : consulting-branch.atlas-studio.org et saas-branch.atlas-studio.org.",
         ],
       },
       {
@@ -137,8 +137,8 @@ const EN: LegalBlock[] = [
       {
         heading: 'Departments',
         body: [
-          'Atlas Studio brings together two departments: Atlas SaaS, which publishes the business applications of the Atlas range, and Atlas Consulting, which carries out consulting and training assignments.',
-          'Each department publishes its own terms on its website: saas-branch.atlas-studio.org and consulting-branch.atlas-studio.org.',
+          'Atlas Studio brings together two departments: Atlas Consulting, which carries out consulting and training assignments, and Atlas SaaS, which publishes the business applications of the Atlas range.',
+          'Each department publishes its own terms on its website: consulting-branch.atlas-studio.org and saas-branch.atlas-studio.org.',
         ],
       },
       {

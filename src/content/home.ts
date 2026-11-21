@@ -60,7 +60,7 @@ const CONSULTING = DEPARTMENTS.consulting.url;
 export const HOME: Record<Locale, HomeContent> = {
   fr: {
     hero: {
-      eyebrow: 'Édition de logiciels · Conseil & formation',
+      eyebrow: 'Conseil & formation · Édition de logiciels',
       title: 'Atlas Studio',
       lead: 'Le terrain écrit le code.',
       body:
@@ -69,12 +69,24 @@ export const HOME: Record<Locale, HomeContent> = {
     },
     identity: [
       { label: 'Entreprise', value: 'Atlas Studio' },
-      { label: 'Départements', value: 'Atlas SaaS · Atlas Consulting' },
-      { label: 'Offre', value: 'Applications métier · Conseil · Formation' },
+      { label: 'Départements', value: 'Atlas Consulting · Atlas SaaS' },
+      { label: 'Offre', value: 'Conseil · Formation · Applications métier' },
     ],
     departmentCards: [
       {
-        ...department('saas', 'A.'),
+        ...department('consulting', 'A.'),
+        kicker: 'Conseil & formation',
+        description:
+          "Le département de conseil et de formation d'Atlas Studio. Nous intervenons du cadrage au transfert " +
+          'de compétences, aux côtés des équipes qui portent le changement dans leur organisation.',
+        rows: [
+          { term: 'Diagnostic', detail: 'Cadrage & audit' },
+          { term: 'Accompagnement', detail: 'Conduite du changement' },
+          { term: 'Formation', detail: 'Montée en compétences' },
+        ],
+      },
+      {
+        ...department('saas', 'B.'),
         kicker: 'Édition de logiciels',
         description:
           "Le département d'édition d'Atlas Studio. Des applications métier pensées pour les organisations " +
@@ -84,18 +96,6 @@ export const HOME: Record<Locale, HomeContent> = {
           { term: "Une suite d'applications métier", detail: 'Gamme Atlas' },
           { term: 'Déploiement', detail: 'SaaS, hébergé et infogéré' },
           { term: 'Suivi', detail: 'Maintenance & évolutions' },
-        ],
-      },
-      {
-        ...department('consulting', 'B.'),
-        kicker: 'Conseil & formation',
-        description:
-          "Le département de conseil et de formation d'Atlas Studio. Nous intervenons du cadrage au transfert " +
-          'de compétences, aux côtés des équipes qui portent le changement dans leur organisation.',
-        rows: [
-          { term: 'Diagnostic', detail: 'Cadrage & audit' },
-          { term: 'Accompagnement', detail: 'Conduite du changement' },
-          { term: 'Formation', detail: 'Montée en compétences' },
         ],
       },
     ],
@@ -131,6 +131,15 @@ export const HOME: Record<Locale, HomeContent> = {
     },
     footerColumns: [
       {
+        title: DEPARTMENTS.consulting.name,
+        links: [
+          { label: 'Le département', href: CONSULTING },
+          { label: 'Diagnostic', href: CONSULTING },
+          { label: 'Accompagnement', href: CONSULTING },
+          { label: 'Formation', href: CONSULTING },
+        ],
+      },
+      {
         title: DEPARTMENTS.saas.name,
         links: [
           { label: 'Le département', href: SAAS },
@@ -142,20 +151,11 @@ export const HOME: Record<Locale, HomeContent> = {
           { label: 'Contact', href: `${SAAS}/contact` },
         ],
       },
-      {
-        title: DEPARTMENTS.consulting.name,
-        links: [
-          { label: 'Le département', href: CONSULTING },
-          { label: 'Diagnostic', href: CONSULTING },
-          { label: 'Accompagnement', href: CONSULTING },
-          { label: 'Formation', href: CONSULTING },
-        ],
-      },
     ],
   },
   en: {
     hero: {
-      eyebrow: 'Software publishing · Consulting & training',
+      eyebrow: 'Consulting & training · Software publishing',
       title: 'Atlas Studio',
       lead: 'The field writes the code.',
       body:
@@ -164,25 +164,12 @@ export const HOME: Record<Locale, HomeContent> = {
     },
     identity: [
       { label: 'Company', value: 'Atlas Studio' },
-      { label: 'Departments', value: 'Atlas SaaS · Atlas Consulting' },
-      { label: 'Offering', value: 'Business applications · Consulting · Training' },
+      { label: 'Departments', value: 'Atlas Consulting · Atlas SaaS' },
+      { label: 'Offering', value: 'Consulting · Training · Business applications' },
     ],
     departmentCards: [
       {
-        ...department('saas', 'A.'),
-        kicker: 'Software publishing',
-        description:
-          "Atlas Studio's software publishing department. Business applications built for organisations " +
-          'that manage assets, teams and contracts, delivered as SaaS, maintained and continuously ' +
-          "improved. The full Atlas range is presented on the department's website.",
-        rows: [
-          { term: 'A suite of business applications', detail: 'Atlas range' },
-          { term: 'Deployment', detail: 'SaaS, hosted and managed' },
-          { term: 'Ongoing support', detail: 'Maintenance & updates' },
-        ],
-      },
-      {
-        ...department('consulting', 'B.'),
+        ...department('consulting', 'A.'),
         url: `${CONSULTING}/en`,
         kicker: 'Consulting & training',
         description:
@@ -192,6 +179,19 @@ export const HOME: Record<Locale, HomeContent> = {
           { term: 'Assessment', detail: 'Scoping & audit' },
           { term: 'Support', detail: 'Change management' },
           { term: 'Training', detail: 'Upskilling' },
+        ],
+      },
+      {
+        ...department('saas', 'B.'),
+        kicker: 'Software publishing',
+        description:
+          "Atlas Studio's software publishing department. Business applications built for organisations " +
+          'that manage assets, teams and contracts, delivered as SaaS, maintained and continuously ' +
+          "improved. The full Atlas range is presented on the department's website.",
+        rows: [
+          { term: 'A suite of business applications', detail: 'Atlas range' },
+          { term: 'Deployment', detail: 'SaaS, hosted and managed' },
+          { term: 'Ongoing support', detail: 'Maintenance & updates' },
         ],
       },
     ],
@@ -227,6 +227,15 @@ export const HOME: Record<Locale, HomeContent> = {
     },
     footerColumns: [
       {
+        title: DEPARTMENTS.consulting.name,
+        links: [
+          { label: 'The department', href: `${CONSULTING}/en` },
+          { label: 'Method', href: `${CONSULTING}/en/method` },
+          { label: 'Training', href: `${CONSULTING}/en/training` },
+          { label: 'Background', href: `${CONSULTING}/en/background` },
+        ],
+      },
+      {
         title: DEPARTMENTS.saas.name,
         links: [
           { label: 'The department', href: SAAS },
@@ -236,15 +245,6 @@ export const HOME: Record<Locale, HomeContent> = {
           { label: 'Blog', href: `${SAAS}/blog` },
           { label: 'FAQ', href: `${SAAS}/faq` },
           { label: 'Contact', href: `${SAAS}/contact` },
-        ],
-      },
-      {
-        title: DEPARTMENTS.consulting.name,
-        links: [
-          { label: 'The department', href: `${CONSULTING}/en` },
-          { label: 'Method', href: `${CONSULTING}/en/method` },
-          { label: 'Training', href: `${CONSULTING}/en/training` },
-          { label: 'Background', href: `${CONSULTING}/en/background` },
         ],
       },
     ],
