@@ -21,9 +21,9 @@ export default {
           faible: '#6B6C6F',
           label: '#6B675F',
         },
-        // Département Atlas SaaS : l'or de son site (--gold).
+        // Département Atlas SaaS : l'or clair de son site (--gold-l).
         saas: {
-          DEFAULT: '#E8A33D',
+          DEFAULT: '#F0B252',
           encre: '#1C1915',
           muted: '#4A433B',
           bord: '#C9A46A',
