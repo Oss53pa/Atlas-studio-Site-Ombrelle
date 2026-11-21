@@ -5,8 +5,9 @@ import type { DepartmentKey } from '../config/site';
  * Palettes des blocs de département.
  *
  * Au repos les deux blocs sont identiques : deux cadres sur le fond sable.
- * Mis en avant, chacun prend ses couleurs : volt pour l'édition, indigo pour
- * le conseil. Les valeurs sont appliquées en style inline parce qu'elles
+ * Mis en avant, chacun prend les couleurs de son site : un or pâle tiré de
+ * celui d'Atlas SaaS (--gold du site SaaS, éclairci à la demande), l'indigo d'Atlas Consulting. Le lien du hero passe
+ * au bronze du site SaaS, l'or étant illisible sur le fond sable (2:1). Les valeurs sont appliquées en style inline parce qu'elles
  * changent au survol et qu'elles sont animées par une transition.
  */
 export type DepartmentPalette = {
@@ -36,14 +37,14 @@ const IDLE: DepartmentPalette = {
 
 const ACTIVE: Record<DepartmentKey, DepartmentPalette> = {
   saas: {
-    bg: '#CBE45F',
-    fg: '#14150F',
-    muted: '#414727',
-    border: '#CBE45F',
-    rule: 'rgba(20,21,15,.22)',
+    bg: '#F6D08F',
+    fg: '#1C1915',
+    muted: '#4A433B',
+    border: '#F6D08F',
+    rule: 'rgba(28,25,21,.22)',
     arrow: 'translateX(8px)',
     lift: 'translateY(-4px)',
-    link: '#5A6B12',
+    link: '#7A5A2E',
   },
   consulting: {
     bg: '#1C2058',
