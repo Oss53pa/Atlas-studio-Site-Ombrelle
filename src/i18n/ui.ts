@@ -37,7 +37,6 @@ export type UiStrings = {
   legal: {
     eyebrow: string;
     title: string;
-    intro: string;
     back: string;
   };
   notFound: {
@@ -79,9 +78,6 @@ export const UI: Record<Locale, UiStrings> = {
     legal: {
       eyebrow: 'Informations légales',
       title: 'Mentions légales',
-      intro:
-        `Ces informations concernent le site ombrelle ${SITE.domain}. Les conditions propres aux applications ` +
-        'et aux missions sont publiées sur les sites des départements.',
       back: '← Retour à l’accueil',
     },
     notFound: {
@@ -137,10 +133,6 @@ export const UI: Record<Locale, UiStrings> = {
     legal: {
       eyebrow: 'Legal information',
       title: 'Legal notice',
-      intro:
-        `This information applies to the ${SITE.domain} website. Terms specific to our applications and ` +
-        'assignments are published on each department’s website. This English version is provided for ' +
-        'convenience; in the event of any discrepancy, the French version prevails.',
       back: '← Back to home',
     },
     notFound: {
