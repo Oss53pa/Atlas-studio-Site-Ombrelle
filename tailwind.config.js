@@ -21,13 +21,13 @@ export default {
           faible: '#6B6C6F',
           label: '#6B675F',
         },
-        // Département Atlas SaaS : volt.
+        // Département Atlas SaaS : l'or de son site (--gold).
         saas: {
-          DEFAULT: '#CBE45F',
-          encre: '#14150F',
-          muted: '#414727',
-          bord: '#A8C22F',
-          lien: '#5A6B12',
+          DEFAULT: '#E8A33D',
+          encre: '#1C1915',
+          muted: '#4A433B',
+          bord: '#C9A46A',
+          lien: '#7A5A2E',
         },
         // Département Atlas Consulting : indigo.
         consulting: {
