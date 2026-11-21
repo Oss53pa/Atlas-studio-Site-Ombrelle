@@ -21,10 +21,10 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-rule bg-sable/[0.86] backdrop-blur-md">
       <div className="shell flex flex-wrap items-center justify-between gap-6 py-4">
-        <Link to={PATHS[locale].home} aria-label={t.homeLabel} className="text-encre">
+        <Link to={PATHS[locale].home} aria-label={t.homeLabel} className="order-1 text-encre">
           <AtlasLogo className="block h-11 w-auto" />
         </Link>
-        <nav className="flex flex-wrap items-center gap-x-[clamp(14px,2.2vw,32px)] gap-y-3 text-[13px] uppercase tracking-[0.1em]">
+        <nav className="order-3 flex w-full flex-wrap items-center gap-x-[clamp(14px,2.2vw,32px)] gap-y-3 text-[13px] uppercase tracking-[0.1em] sm:order-2 sm:ml-auto sm:w-auto">
           {t.nav.map((link) => (
             <Link
               key={link.anchor}
@@ -40,16 +40,18 @@ export default function SiteHeader() {
           >
             {t.contact}
           </Link>
-          <Link
-            to={switchTo}
-            hrefLang={other}
-            lang={other}
-            aria-label={t.switchAria}
-            className="text-texte-faible transition-colors hover:text-sauge"
-          >
-            {t.switchLabel}
-          </Link>
         </nav>
+        {/* Sur mobile, le sélecteur reste sur la ligne du logo et la navigation
+            prend la ligne suivante ; à partir de 640 px, il suit la navigation. */}
+        <Link
+          to={switchTo}
+          hrefLang={other}
+          lang={other}
+          aria-label={t.switchAria}
+          className="order-2 text-[13px] uppercase tracking-[0.1em] text-texte-faible transition-colors hover:text-sauge sm:order-3"
+        >
+          {t.switchLabel}
+        </Link>
       </div>
     </header>
   );
