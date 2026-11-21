@@ -62,7 +62,7 @@ export const HOME: Record<Locale, HomeContent> = {
     hero: {
       eyebrow: 'Édition de logiciels · Conseil & formation',
       title: 'Atlas Studio',
-      lead: 'Éditeur de logiciels métier, cabinet de conseil et de formation.',
+      lead: 'Le terrain écrit le code.',
       body:
         'Deux départements réunis sous un même nom. Nous accompagnons les organisations sur le terrain, ' +
         'et nous éditons les logiciels qu’elles utilisent au quotidien.',
@@ -157,7 +157,7 @@ export const HOME: Record<Locale, HomeContent> = {
     hero: {
       eyebrow: 'Software publishing · Consulting & training',
       title: 'Atlas Studio',
-      lead: 'Business software publisher, consulting and training firm.',
+      lead: 'The field writes the code.',
       body:
         'Two departments under one name. We work alongside organisations in the field, ' +
         'and we publish the software they use every day.',
