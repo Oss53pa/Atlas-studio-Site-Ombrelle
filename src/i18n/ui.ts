@@ -69,7 +69,7 @@ export const UI: Record<Locale, UiStrings> = {
       cardAria: (name) => `${name}, ouvrir le site du département`,
     },
     footer: {
-      tagline: 'Édition de logiciels, conseil et formation.',
+      tagline: 'Conseil, formation et édition de logiciels.',
       company: 'Entreprise',
       contact: 'Contact',
       legal: 'Mentions légales',
@@ -92,7 +92,7 @@ export const UI: Record<Locale, UiStrings> = {
       home: {
         title: 'Atlas Studio | Le terrain écrit le code',
         description:
-          "Atlas Studio réunit deux départements : Atlas SaaS, édition d'applications métier en SaaS, et Atlas Consulting, conseil et formation.",
+          "Atlas Studio réunit deux départements : Atlas Consulting, conseil et formation, et Atlas SaaS, édition d'applications métier en SaaS.",
       },
       legal: {
         title: `Mentions légales | ${SITE.name}`,
@@ -100,7 +100,7 @@ export const UI: Record<Locale, UiStrings> = {
       },
       notFound: {
         title: `Page introuvable | ${SITE.name}`,
-        description: 'Éditeur de logiciels métier, cabinet de conseil et de formation.',
+        description: 'Cabinet de conseil et de formation, éditeur de logiciels métier.',
       },
     },
   },
@@ -124,7 +124,7 @@ export const UI: Record<Locale, UiStrings> = {
       cardAria: (name) => `${name}: open the department’s website`,
     },
     footer: {
-      tagline: 'Software publishing, consulting and training.',
+      tagline: 'Consulting, training and software publishing.',
       company: 'Company',
       contact: 'Contact',
       legal: 'Legal notice',
@@ -145,7 +145,7 @@ export const UI: Record<Locale, UiStrings> = {
       home: {
         title: 'Atlas Studio | The field writes the code',
         description:
-          'Atlas Studio brings together two departments: Atlas SaaS, which publishes business applications delivered as SaaS, and Atlas Consulting, for consulting and training.',
+          'Atlas Studio brings together two departments: Atlas Consulting, for consulting and training, and Atlas SaaS, which publishes business applications delivered as SaaS.',
       },
       legal: {
         title: `Legal notice | ${SITE.name}`,
@@ -153,7 +153,7 @@ export const UI: Record<Locale, UiStrings> = {
       },
       notFound: {
         title: `Page not found | ${SITE.name}`,
-        description: 'Business software publisher, consulting and training firm.',
+        description: 'Consulting and training firm, business software publisher.',
       },
     },
   },
