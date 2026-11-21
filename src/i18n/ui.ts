@@ -94,7 +94,7 @@ export const UI: Record<Locale, UiStrings> = {
     },
     meta: {
       home: {
-        title: 'Atlas Studio, édition de logiciels, conseil et formation',
+        title: 'Atlas Studio | Le terrain écrit le code',
         description:
           "Atlas Studio réunit deux départements : Atlas SaaS, édition d'applications métier en SaaS, et Atlas Consulting, conseil et formation.",
       },
@@ -151,7 +151,7 @@ export const UI: Record<Locale, UiStrings> = {
     },
     meta: {
       home: {
-        title: 'Atlas Studio: software publishing, consulting and training',
+        title: 'Atlas Studio | The field writes the code',
         description:
           'Atlas Studio brings together two departments: Atlas SaaS, which publishes business applications delivered as SaaS, and Atlas Consulting, for consulting and training.',
       },
