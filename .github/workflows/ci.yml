@@ -1,10 +1,12 @@
 name: CI
 
+# Contrôles sur chaque PR vers main. Plus de seconde exécution après la fusion :
+# le code fusionné est celui qui vient d'être contrôlé dans la PR. Le quota
+# gratuit de GitHub Actions est partagé par tous les dépôts privés du compte.
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
