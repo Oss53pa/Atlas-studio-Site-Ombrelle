@@ -95,7 +95,7 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "text": "Ce site ne comporte ni compte utilisateur, ni formulaire, ni mesure d'audience. Aucune donnée personnelle n'y est collectée par Atlas Studio."
+                    "text": "Ce site ne comporte ni compte utilisateur, ni formulaire, ni mesure d'audience. Atlas Studio n'y collecte aucune donnée personnelle. Pour afficher les pages, deux prestataires techniques reçoivent les données de connexion habituelles (adresse IP, type de navigateur) : Vercel, qui héberge le site, et Supabase, qui fournit le texte des mentions légales."
                   }
                 ]
               },
@@ -238,7 +238,7 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "text": "This website has no user accounts, no forms and no audience measurement. Atlas Studio collects no personal data through it."
+                    "text": "This website has no user accounts, no forms and no audience measurement. Atlas Studio collects no personal data through it. To display the pages, two technical providers receive the usual connection data (IP address, browser type): Vercel, which hosts the website, and Supabase, which supplies the text of the legal notice."
                   }
                 ]
               },
